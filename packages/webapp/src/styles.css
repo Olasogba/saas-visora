@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-colorful {
+  height: 100px;
+}
+
 @font-face {
   font-family: 'Inter Regular, sans-serif';
   src: url('./assets/fonts/Inter-Regular.woff') format('woff');

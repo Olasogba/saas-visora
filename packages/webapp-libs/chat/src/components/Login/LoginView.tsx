@@ -207,46 +207,12 @@ export const LoginView: React.FC<LoginViewProps> = ({
   };
 
   return (
-    <div className="w-screen h-screen bg-white">
+    <div className="w-scree h-screen bg-white">
       <div
-        className={`flex w-full h-full transition-opacity duration-1000 ${
+        className={`flex w-ful h-full transition-opacity duration-1000 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
-        <div className="hidden md:flex md:w-1/2 lg:w-3/5 h-full">
-          <Canvas
-            camera={{ position: [0, 0, 4], fov: 50 }}
-            className="w-full h-full touch-none"
-          >
-            <color attach="background" args={["#FAFAFA"]} />
-            <ambientLight intensity={0.5} />
-            <directionalLight
-              castShadow
-              position={[-1, 1, 1]}
-              intensity={1}
-              shadow-mapSize={1024}
-            />
-            <directionalLight
-              castShadow
-              position={[1, 1, -1]}
-              intensity={1}
-              shadow-mapSize={1024}
-            />
-            <directionalLight
-              castShadow
-              position={[0, 1, 1]}
-              intensity={1}
-              shadow-mapSize={1024}
-            />
-            <VerbaThree
-              color="#FAFAFA"
-              useMaterial={production == "Local" ? false : true}
-              model_path={
-                production == "Local" ? "/verba.glb" : "/weaviate.glb"
-              }
-            />
-          </Canvas>
-        </div>
         <div className="w-full md:flex md:w-1/2 lg:w-2/5 h-full flex justify-center items-center p-5">
           <div className="flex flex-col gap-8 items-center md:items-start justify-center w-4/5">
             <div className="flex flex-col items-center md:items-start gap-2">
