@@ -32,7 +32,7 @@ const GettingStartedComponent: React.FC<GettingStartedComponentProps> = ({
           <div className="hero-content flex-row">
             <div className="text-center lg:text-left">
               <h1 className="text-2xl md:text-5xl font-bold">
-                Welcome to Verba
+                Welcome to Visora
               </h1>
               <h2 className="text-lg md:text-2xl mt-2">
                 Your Open Source RAG App

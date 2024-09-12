@@ -98,11 +98,22 @@ export const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
               <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
                 <Link
                   className={menuItemClassName}
-                  to={generateTenantPath(RoutesConfig.finances.paymentConfirm)}
+                  to={generateTenantPath(RoutesConfig.chat)}
                   onClick={closeSidebar}
                   navLink
                 >
-                  <FormattedMessage defaultMessage="Payments" id="Home / payments link" />
+                  <FormattedMessage defaultMessage="Chat" id="Home / Chat / Title" />
+                </Link>
+              </TenantRoleAccess>
+
+              <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
+                <Link
+                  className={menuItemClassName}
+                  to={generateTenantPath(RoutesConfig.tenant.settings.members)}
+                  onClick={closeSidebar}
+                  navLink
+                >
+                  <FormattedMessage defaultMessage="Organization settings" id="Home / organization settings" />
                 </Link>
               </TenantRoleAccess>
 
@@ -114,6 +125,17 @@ export const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
                   navLink
                 >
                   <FormattedMessage defaultMessage="Subscriptions" id="Home / subscriptions link" />
+                </Link>
+              </TenantRoleAccess>
+
+              <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
+                <Link
+                  className={menuItemClassName}
+                  to={generateTenantPath(RoutesConfig.finances.paymentConfirm)}
+                  onClick={closeSidebar}
+                  navLink
+                >
+                  <FormattedMessage defaultMessage="Payments" id="Home / payments link" />
                 </Link>
               </TenantRoleAccess>
 
@@ -171,28 +193,6 @@ export const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
                   <FormattedMessage defaultMessage="Admin" id="Home / admin link" />
                 </Link>
               </RoleAccess>
-
-              <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
-                <Link
-                  className={menuItemClassName}
-                  to={generateTenantPath(RoutesConfig.tenant.settings.members)}
-                  onClick={closeSidebar}
-                  navLink
-                >
-                  <FormattedMessage defaultMessage="Organization settings" id="Home / organization settings" />
-                </Link>
-              </TenantRoleAccess>
-
-              <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
-                <Link
-                  className={menuItemClassName}
-                  to={generateTenantPath(RoutesConfig.chat)}
-                  onClick={closeSidebar}
-                  navLink
-                >
-                  <FormattedMessage defaultMessage="Chat" id="Home / Chat / Title" />
-                </Link>
-              </TenantRoleAccess>
               {/* <p className="my-2 ml-2 mt-4 text-sm text-muted-foreground">
                 <FormattedMessage defaultMessage="Static pages" id="Sidebar / static pages" />
               </p> */}

@@ -178,121 +178,119 @@ export const Home = () => {
   };
 
   return (
-    // <PageLayout>
-      <main
-        // className={`min-h-screen bg-bg-verba text-text-verba min-w-screen ${fontClassName}`}
-        className={`min-h-screen bg-bg-verba text-text-verba min-w-screen`}
-        data-theme={selectedTheme.theme}
-      >
-        {gtag !== "" && <GoogleAnalytics gaId={gtag} />}
+    <main
+      // className={`min-h-screen bg-bg-verba text-text-verba min-w-screen ${fontClassName}`}
+      className={`min-h-screen bg-bg-verba text-text-verba min-w-screen`}
+      data-theme={selectedTheme.theme}
+    >
+      {gtag !== "" && <GoogleAnalytics gaId={gtag} />}
 
-        <StatusMessengerComponent
-          status_messages={statusMessages}
-          set_status_messages={setStatusMessages}
+      <StatusMessengerComponent
+        status_messages={statusMessages}
+        set_status_messages={setStatusMessages}
+      />
+
+      {!isLoggedIn && isHealthy && (
+        <LoginView
+          production={production}
+          setSelectedTheme={setSelectedTheme}
+          setThemes={setThemes}
+          credentials={credentials}
+          setIsLoggedIn={setIsLoggedIn}
+          setRAGConfig={setRAGConfig}
+          setCredentials={setCredentials}
         />
+      )}
 
-        {!isLoggedIn && isHealthy && (
-          <LoginView
-            production={production}
-            setSelectedTheme={setSelectedTheme}
-            setThemes={setThemes}
-            credentials={credentials}
-            setIsLoggedIn={setIsLoggedIn}
-            setRAGConfig={setRAGConfig}
-            setCredentials={setCredentials}
-          />
-        )}
+      {isLoggedIn && isHealthy && (
+        <div
+          className={`transition-opacity duration-1000 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          } flex flex-col gap-2 p-5`}
+        >
+          <GettingStartedComponent addStatusMessage={addStatusMessage} />
 
-        {isLoggedIn && isHealthy && (
-          <div
-            className={`transition-opacity duration-1000 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            } flex flex-col gap-2 p-5`}
-          >
-            <GettingStartedComponent addStatusMessage={addStatusMessage} />
+          <div>
+            <Navbar
+              production={production}
+              title={selectedTheme.title.text}
+              subtitle={selectedTheme.subtitle.text}
+              imageSrc={selectedTheme.image.src}
+              version="v2.0.0"
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
 
-            <div>
-              <Navbar
+            <div className={`${currentPage === "CHAT" ? "" : "hidden"}`}>
+              <ChatView
+                addStatusMessage={addStatusMessage}
+                credentials={credentials}
+                RAGConfig={RAGConfig}
+                setRAGConfig={setRAGConfig}
                 production={production}
-                title={selectedTheme.title.text}
-                subtitle={selectedTheme.subtitle.text}
-                imageSrc={selectedTheme.image.src}
-                version="v2.0.0"
+                selectedTheme={selectedTheme}
                 currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
+                documentFilter={documentFilter}
+                setDocumentFilter={setDocumentFilter}
               />
+            </div>
 
-              <div className={`${currentPage === "CHAT" ? "" : "hidden"}`}>
-                <ChatView
-                  addStatusMessage={addStatusMessage}
-                  credentials={credentials}
-                  RAGConfig={RAGConfig}
-                  setRAGConfig={setRAGConfig}
-                  production={production}
-                  selectedTheme={selectedTheme}
-                  currentPage={currentPage}
-                  documentFilter={documentFilter}
-                  setDocumentFilter={setDocumentFilter}
-                />
-              </div>
+            {currentPage === "DOCUMENTS" && (
+              <DocumentView
+                addStatusMessage={addStatusMessage}
+                credentials={credentials}
+                production={production}
+                selectedTheme={selectedTheme}
+                documentFilter={documentFilter}
+                setDocumentFilter={setDocumentFilter}
+              />
+            )}
 
-              {currentPage === "DOCUMENTS" && (
-                <DocumentView
-                  addStatusMessage={addStatusMessage}
-                  credentials={credentials}
-                  production={production}
-                  selectedTheme={selectedTheme}
-                  documentFilter={documentFilter}
-                  setDocumentFilter={setDocumentFilter}
-                />
-              )}
-
-              <div
-                className={`${
-                  currentPage === "ADD" && production != "Demo" ? "" : "hidden"
-                }`}
-              >
-                <IngestionView
-                  RAGConfig={RAGConfig}
-                  setRAGConfig={setRAGConfig}
-                  credentials={credentials}
-                  addStatusMessage={addStatusMessage}
-                />
-              </div>
-
-              <div
-                className={`${
-                  currentPage === "SETTINGS" && production != "Demo"
-                    ? ""
-                    : "hidden"
-                }`}
-              >
-                <SettingsView
-                  credentials={credentials}
-                  addStatusMessage={addStatusMessage}
-                  selectedTheme={selectedTheme}
-                  setSelectedTheme={setSelectedTheme}
-                  themes={themes}
-                  setThemes={setThemes}
-                />
-              </div>
+            <div
+              className={`${
+                currentPage === "ADD" && production != "Demo" ? "" : "hidden"
+              }`}
+            >
+              <IngestionView
+                RAGConfig={RAGConfig}
+                setRAGConfig={setRAGConfig}
+                credentials={credentials}
+                addStatusMessage={addStatusMessage}
+              />
             </div>
 
             <div
-              className={`footer footer-center p-4 mt-8 bg-bg-verba text-text-alt-verba transition-all duration-1500 delay-1000`}
+              className={`${
+                currentPage === "SETTINGS" && production != "Demo"
+                  ? ""
+                  : "hidden"
+              }`}
             >
-              <aside>
-                <p>Build with ♥ and Weaviate © 2024</p>
-              </aside>
+              <SettingsView
+                credentials={credentials}
+                addStatusMessage={addStatusMessage}
+                selectedTheme={selectedTheme}
+                setSelectedTheme={setSelectedTheme}
+                themes={themes}
+                setThemes={setThemes}
+              />
             </div>
           </div>
-        )}
 
-        <img
-          referrerPolicy="no-referrer-when-downgrade"
-          src="https://static.scarf.sh/a.png?x-pxid=ec666e70-aee5-4e87-bc62-0935afae63ac"
-        />
-      </main>
-    // </PageLayout>
+          <div
+            className={`footer footer-center p-4 mt-8 bg-bg-verba text-text-alt-verba transition-all duration-1500 delay-1000`}
+          >
+            <aside>
+              <p>Built with ♥ by <a href="https://algolog.co" target="_blank" rel="noreferrer" style={{color: selectedTheme.text_color?.color}}>Algolog</a> © 2024</p>
+            </aside>
+          </div>
+        </div>
+      )}
+
+      <img
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://static.scarf.sh/a.png?x-pxid=ec666e70-aee5-4e87-bc62-0935afae63ac"
+      />
+    </main>
   );
 }

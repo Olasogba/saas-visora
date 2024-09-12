@@ -480,14 +480,14 @@ export interface Theme {
 
 export const LightTheme: Theme = {
   theme_name: "Light",
-  title: { text: "Verba", type: "text", description: "Title" },
+  title: { text: "Visora", type: "text", description: "Title" },
   subtitle: {
     text: "The Golden RAGtriever",
     type: "text",
     description: "Subtitle",
   },
   intro_message: {
-    text: "Welcome to Verba, your open-source RAG application!",
+    text: "Welcome to Visora, your internal docs whiz!",
     type: "text",
     description: "First Message",
   },
@@ -554,11 +554,11 @@ export const LightTheme: Theme = {
 export const DarkTheme: Theme = {
   ...LightTheme,
   theme_name: "Dark",
-  title: { ...LightTheme.title, text: "Verba" },
+  title: { ...LightTheme.title, text: "Visora" },
   subtitle: { ...LightTheme.subtitle, text: "The Dark RAGtriever" },
   intro_message: {
     ...LightTheme.intro_message,
-    text: "Welcome to Verba, your open-source RAG application!",
+    text: "Welcome to Visora, your internal docs whiz!",
   },
   image: {
     ...LightTheme.image,
@@ -585,11 +585,11 @@ export const DarkTheme: Theme = {
 export const WCDTheme: Theme = {
   ...LightTheme,
   theme_name: "WCD",
-  title: { ...LightTheme.title, text: "Verba" },
-  subtitle: { ...LightTheme.subtitle, text: "Weaviate Chatbot" },
+  title: { ...LightTheme.title, text: "Visora" },
+  subtitle: { ...LightTheme.subtitle, text: "Chatbot" },
   intro_message: {
     ...LightTheme.intro_message,
-    text: "Welcome to Verba, your open-source RAG application!",
+    text: "Welcome to Visora, your internal docs whiz!",
   },
   image: {
     ...LightTheme.image,
@@ -616,11 +616,11 @@ export const WCDTheme: Theme = {
 export const WeaviateTheme: Theme = {
   ...LightTheme,
   theme_name: "Weaviate",
-  title: { ...LightTheme.title, text: "Verba" },
-  subtitle: { ...LightTheme.subtitle, text: "Weaviate Chatbot" },
+  title: { ...LightTheme.title, text: "Visora" },
+  subtitle: { ...LightTheme.subtitle, text: "Chatbot" },
   intro_message: {
     ...LightTheme.intro_message,
-    text: "Welcome to Verba, your open-source RAG application!",
+    text: "Welcome to Visora, your internal docs whiz!",
   },
   image: {
     ...LightTheme.image,
