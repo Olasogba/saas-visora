@@ -221,12 +221,12 @@ export const LoginView: React.FC<LoginViewProps> = ({
                   Welcome to
                 </p>
                 <p className="font-light text-3xl md:text-4xl text-text-verba">
-                  Verba
+                  Visora
                 </p>
               </div>
               {production == "Local" && (
                 <p className="text-text-verba text-base lg:text-lg ">
-                  Choose your deployment
+                  Your internal docs assistant.
                 </p>
               )}
             </div>
@@ -234,7 +234,7 @@ export const LoginView: React.FC<LoginViewProps> = ({
               <div className="flex flex-col justify-start gap-4 w-full">
                 {production == "Local" && (
                   <div className="flex flex-col justify-start gap-2 w-full">
-                    <VerbaButton
+                    {/* <VerbaButton
                       Icon={FaDatabase}
                       title="Weaviate"
                       disabled={isConnecting}
@@ -242,8 +242,8 @@ export const LoginView: React.FC<LoginViewProps> = ({
                         setSelectStage(false);
                         setSelectedDeployment("Weaviate");
                       }}
-                    />
-                    <VerbaButton
+                    /> */}
+                    {/* <VerbaButton
                       title="Docker"
                       Icon={FaDocker}
                       disabled={isConnecting}
@@ -252,9 +252,9 @@ export const LoginView: React.FC<LoginViewProps> = ({
                         connect("Docker");
                       }}
                       loading={isConnecting && selectedDeployment == "Docker"}
-                    />
+                    /> */}
                     <VerbaButton
-                      title="Local"
+                      title="Let's go!"
                       Icon={FaLaptopCode}
                       disabled={isConnecting}
                       onClick={() => {
