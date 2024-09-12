@@ -30,7 +30,7 @@ import {
 
 // Utilities
 import { fetchHealth } from "../../utils/api";
-import { fonts, FontKey } from "../../utils/util";
+// import { fonts, FontKey } from "../../utils/util";
 
 export const Home = () => {
   // Page States
@@ -49,8 +49,8 @@ export const Home = () => {
   });
   const [selectedTheme, setSelectedTheme] = useState<Theme>(themes["Weaviate"]);
 
-  const fontKey = selectedTheme.font.value as FontKey; // Safely cast if you're sure, or use a check
-  const fontClassName = fontKey ? fonts[fontKey]?.className || "" : "";
+  // const fontKey = selectedTheme.font.value as FontKey; // Safely cast if you're sure, or use a check
+  // const fontClassName = fontKey ? fonts[fontKey]?.className || "" : "";
 
   // Login States
   const [isHealthy, setIsHealthy] = useState(false);
@@ -178,9 +178,10 @@ export const Home = () => {
   };
 
   return (
-    <PageLayout>
+    // <PageLayout>
       <main
-        className={`min-h-screen bg-bg-verba text-text-verba min-w-screen ${fontClassName}`}
+        // className={`min-h-screen bg-bg-verba text-text-verba min-w-screen ${fontClassName}`}
+        className={`min-h-screen bg-bg-verba text-text-verba min-w-screen`}
         data-theme={selectedTheme.theme}
       >
         {gtag !== "" && <GoogleAnalytics gaId={gtag} />}
@@ -292,6 +293,6 @@ export const Home = () => {
           src="https://static.scarf.sh/a.png?x-pxid=ec666e70-aee5-4e87-bc62-0935afae63ac"
         />
       </main>
-    </PageLayout>
+    // </PageLayout>
   );
 }

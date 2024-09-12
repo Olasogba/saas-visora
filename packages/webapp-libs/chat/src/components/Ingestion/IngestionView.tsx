@@ -44,6 +44,7 @@ const IngestionView: React.FC<IngestionViewProps> = ({
 
   // Setup Import WebSocket and messages
   useEffect(() => {
+    return
     const socketHost = getImportWebSocketApiHost();
     const localSocket = new WebSocket(socketHost);
 
@@ -103,7 +104,8 @@ const IngestionView: React.FC<IngestionViewProps> = ({
         localSocket.close();
       }
     };
-  }, [reconnect]);
+  }, []);
+  // }, [reconnect]);
 
   const reconnectToVerba = () => {
     setReconnect((prevState) => !prevState);

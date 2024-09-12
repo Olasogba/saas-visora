@@ -184,6 +184,16 @@ export const Sidebar = (props: HTMLAttributes<HTMLDivElement>) => {
                 </Link>
               </TenantRoleAccess>
 
+              <TenantRoleAccess allowedRoles={[TenantUserRole.OWNER, TenantUserRole.ADMIN]}>
+                <Link
+                  className={menuItemClassName}
+                  to={generateTenantPath(RoutesConfig.chat)}
+                  onClick={closeSidebar}
+                  navLink
+                >
+                  <FormattedMessage defaultMessage="Chat" id="Home / Chat / Title" />
+                </Link>
+              </TenantRoleAccess>
               <p className="my-2 ml-2 mt-4 text-sm text-muted-foreground">
                 <FormattedMessage defaultMessage="Static pages" id="Sidebar / static pages" />
               </p>

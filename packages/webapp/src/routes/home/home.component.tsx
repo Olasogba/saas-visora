@@ -89,6 +89,17 @@ export const Home = () => {
       }),
       link: generateLocalePath(RoutesConfig.crudDemoItem.list),
     },
+    {
+      title: intl.formatMessage({
+        defaultMessage: 'Chat',
+        id: 'Home / Chat / Title',
+      }),
+      subtitle: intl.formatMessage({
+        defaultMessage: 'Chat module example.',
+        id: 'Home / Chat / Subtitle',
+      }),
+      link: generateLocalePath(RoutesConfig.chat),
+    },
   ];
 
   const renderItem = (item: DashboardItem, key: number) => (

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Credentials, Suggestion } from "@/app/types";
+import { Credentials, Suggestion } from "../../utils/types";
 import { IoTrash, IoDocumentSharp, IoReload, IoCopy } from "react-icons/io5";
 import { FaWrench } from "react-icons/fa";
-import { fetchAllSuggestions, deleteSuggestion } from "@/app/api";
+import { fetchAllSuggestions, deleteSuggestion } from "../../utils/api";
 import UserModalComponent from "../Navigation/UserModal";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { formatDistanceToNow, parseISO } from "date-fns";

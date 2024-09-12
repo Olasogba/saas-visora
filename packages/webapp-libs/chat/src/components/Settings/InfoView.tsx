@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Credentials, NodePayload, CollectionPayload } from "@/app/types";
+import { Credentials, NodePayload, CollectionPayload } from "../../utils/types";
 import { IoTrash, IoDocumentSharp, IoReload } from "react-icons/io5";
 import { FaWrench } from "react-icons/fa";
-import { deleteAllDocuments, fetchMeta } from "@/app/api";
+import { deleteAllDocuments, fetchMeta } from "../../utils/api";
 import UserModalComponent from "../Navigation/UserModal";
 
 import VerbaButton from "../Navigation/VerbaButton";

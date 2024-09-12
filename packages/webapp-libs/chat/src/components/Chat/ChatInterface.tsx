@@ -102,7 +102,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   useState("No Embedding Model");
 
   useEffect(() => {
-    setReconnect(true);
+    setReconnect(false);
   }, []);
 
   useEffect(() => {

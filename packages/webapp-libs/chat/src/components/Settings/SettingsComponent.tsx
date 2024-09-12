@@ -15,16 +15,16 @@ import {
   LightTheme,
   DarkTheme,
   Credentials,
-} from "@/app/types";
+} from "../../utils/types";
 
-import VerbaButton from "@/app/components/Navigation/VerbaButton";
+import VerbaButton from "../Navigation/VerbaButton";
 
 import { HexColorPicker } from "react-colorful";
 
 import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
-import { updateThemeConfig } from "@/app/api";
+import { updateThemeConfig } from "../../utils/api";
 
 interface SettingsComponentProps {
   selectedTheme: Theme;
