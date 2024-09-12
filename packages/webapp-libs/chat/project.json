@@ -1,0 +1,9 @@
+{
+  "name": "webapp-libs-chat",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/webapp-libs/chat/src",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project webapp-libs-chat --web",
+  "targets": {}
+}
