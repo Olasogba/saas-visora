@@ -5,6 +5,7 @@ import { RoutesConfig as CrudDemoRoutesConfig } from '@sb/webapp-crud-demo/confi
 import { RoutesConfig as FinancesRoutesConfig } from '@sb/webapp-finances/config/routes';
 import { RoutesConfig as GenerativeAIRoutesConfig } from '@sb/webapp-generative-ai/config/routes';
 import { RoutesConfig as TenantsRoutesConfig } from '@sb/webapp-tenants/config/routes';
+import { RoutesConfig as ChatRoutesConfig } from '@sb/webapp-chat/config/routes';
 
 export const LANG_PREFIX = `/:lang?/*`;
 export const TENANT_PREFIX = `:tenantId?/*`;
@@ -18,6 +19,7 @@ export const RoutesConfig = {
   ...CrudDemoRoutesConfig,
   ...FinancesRoutesConfig,
   //<-- INJECT ROUTE DEFINITION -->
+  ...ChatRoutesConfig,
 };
 
 export const NO_NAVIGATION_ROUTES = [

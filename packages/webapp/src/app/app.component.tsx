@@ -3,6 +3,7 @@ import { DemoItem, DemoItems, PrivacyPolicy, TermsAndConditions } from '@sb/weba
 import { DEFAULT_LOCALE, translationMessages } from '@sb/webapp-core/config/i18n';
 import { CrudDemoItem } from '@sb/webapp-crud-demo/routes';
 import { Documents } from '@sb/webapp-documents/routes';
+import { ChatHome } from '@sb/webapp-chat/routes';
 import { ActiveSubscriptionContext } from '@sb/webapp-finances/components/activeSubscriptionContext';
 import {
   CancelSubscription,
@@ -80,6 +81,7 @@ export const App = () => {
             <Route path={RoutesConfig.crudDemoItem.index} element={<CrudDemoItem routesConfig={RoutesConfig} />} />
             <Route path={RoutesConfig.documents} element={<Documents />} />
             <Route path={RoutesConfig.saasIdeas} element={<SaasIdeas />} />
+            <Route path={RoutesConfig.chat} element={<ChatHome />} />
           </Route>
 
           <Route element={<AuthRoute />}>
